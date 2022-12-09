@@ -12,7 +12,7 @@ A simple offline web3 transaction input decoder for functions and constructors.
 ## Install
 
 ```bash
-pip install web3-input-decoder
+pip install --upgrade git+https://github.com/r4VP4/web3-input-decoder#egg=web3-input-decoder
 ```
 
 ## Quick start
