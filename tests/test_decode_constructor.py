@@ -34,8 +34,8 @@ def test_decode_constructor_without_bytecode():
     ]
     expected_args = [TETHER_CONSTRUCTOR_CALL_ARGUMENT, CALLER_CONSTRUCTOR_CALL_ARGUMENT]
 
-    for abi, input, expected in zip(abis, inputs, expected_args):
-        assert decode_constructor(abi, input) == expected
+    for abi, _input, expected in zip(abis, inputs, expected_args):
+        assert decode_constructor(abi, _input) == expected
 
 
 def test_decode_constructor_with_bytecode():
@@ -52,5 +52,5 @@ def test_decode_constructor_with_bytecode():
         STORAGE_CONSTRUCTOR_CALL_ARGUMENT,
     ]
 
-    for abi, input, bytecode, expected in zip(abis, inputs, bytecodes, expected_args):
-        assert decode_constructor(abi, input, bytecode) == expected
+    for abi, _input, bytecode, expected in zip(abis, inputs, bytecodes, expected_args):
+        assert decode_constructor(abi, _input, bytecode) == expected

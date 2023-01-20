@@ -34,5 +34,5 @@ def test_decode_function():
         SEAPORT_FULFILL_ORDER_CALL_ARGUMENT,
     ]
 
-    for abi, input, expected in zip(abis, inputs, expected_args):
-        assert decode_function(abi, input) == expected
+    for abi, _input, expected in zip(abis, inputs, expected_args):
+        assert decode_function(abi, _input) == expected

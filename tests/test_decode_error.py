@@ -18,26 +18,26 @@ INVALID_INPUT = "Invalid input"
 
 
 @pytest.mark.parametrize(
-    "abi,input,match",
+    "abi,_input,match",
     [
         (INVALID_ABI, INVALID_CALL_INPUT, CONSTRUCTOR_NOT_FOUND),
         (EXAMPLE_ABI, EXAMPLE_CONSTRUCTOR_CALL_INPUT, UNABLE_TO_DETECT),
         (STORAGE_ABI, STORAGE_CONSTRUCTOR_CALL_INPUT, UNABLE_TO_DETECT),
     ],
 )
-def test_decode_constructor_error(abi, input, match):
+def test_decode_constructor_error(abi, _input, match):
     with pytest.raises(InputDataError, match=match):
-        decode_constructor(abi, input)
+        decode_constructor(abi, _input)
 
 
 @pytest.mark.parametrize(
-    "abi,input,match",
+    "abi,_input,match",
     [
         (TETHER_ABI, INVALID_CALL_INPUT, METHOD_NOT_FOUND),
         (INVALID_ABI, INVALID_CALL_INPUT, METHOD_NOT_FOUND),
         (ROUTER_V2_ABI, ROUTER_V2_TOKENS_SWAP_CALL_ERROR_INPUT, INVALID_INPUT),
     ],
 )
-def test_decode_function_error(abi, input, match):
+def test_decode_function_error(abi, _input, match):
     with pytest.raises(InputDataError, match=match):
-        decode_function(abi, input)
+        decode_function(abi, _input)

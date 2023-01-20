@@ -15,7 +15,7 @@ from .data.tether import (
 
 
 @pytest.mark.parametrize(
-    "abi,input_with_bytecode,input",
+    "abi,input_with_bytecode,_input",
     [
         (
             TETHER_ABI,
@@ -29,10 +29,10 @@ from .data.tether import (
         ),
     ],
 )
-def test_detect_arguments(abi, input_with_bytecode, input):
+def test_detect_arguments(abi, input_with_bytecode, _input):
     assert detect_constructor_arguments(
         get_constructor_type(abi), hex_to_bytes(input_with_bytecode)
-    ) == hex_to_bytes(input)
+    ) == hex_to_bytes(_input)
 
 
 def test_selector_to_func_type():
